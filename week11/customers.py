@@ -1,8 +1,3 @@
-
-
-
-
-
 print("---Exercise 1--- ")
 customer = {
     "name": "Alice",
@@ -84,3 +79,13 @@ for t in transactions:
     summary[t["region"]] = summary.get(t["region"], 0) + t["amount"]
 for region in sorted(summary):
     print(f"{region}: {summary[region]}")
+
+#Reflection:
+
+#1.I'd use .get() when the key might not be there, like an optional field such as a customer's email, so the program 
+#doesn't crash. I'd use bracket notation when the key has to exist, because then a KeyError tells me something is wrong
+#with the data.
+
+#2. It reminds me of a pivot table or a SUMIF in Excel, where you add up totals for each category. The Python version is
+#more useful for large datasets because it can handle huge files that would slow down or crash Excel, and I can rerun
+#the same code on new data without redoing the steps by hand.
