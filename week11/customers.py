@@ -29,11 +29,12 @@ del customer["email"]
 print(customer)
 
 print("---Exercise 3---")
+
 print(customer.get("email", "no email on file"))
 try:
     print(customer["email"])
 except KeyError as e:
-    print("KeyError raised for key:", e)
+    print("KeyError Caught:", e)
 
 print("---Exercise 4---")
 for key, value in customer.items():
@@ -41,6 +42,7 @@ for key, value in customer.items():
 
 # Iterating without .items() only yields the keys, not the values.
 # .items() yields (key, value) pairs, so we can unpack both in the loop.
+
 for key in customer:
     print(key)
 
@@ -58,11 +60,11 @@ customers = [
     {"name": "Carol", "tier": "bronze"},
     {"name": "Dave", "tier": "gold"},
 ]
-for c in customers:
-    discount = 300 * tier_discounts.get(c["tier"], 0)
-    print(f"{c['name']} ({c['tier']}): discount ${discount:.2f} on $300")
+for record in customers:
+    discount = 300 * tier_discounts.get(record["tier"], 0)
+    print(f"{record['name']} ({record['tier']}): discount ${discount:.2f} on $300")
 
-print("\n---Exercise 7---")
+print("---Exercise 7---")
 catalog = {
     "Widget A": {"price": 9.99, "stock": 150},
     "Gadget C": {"price": 49.99, "stock": 8},
